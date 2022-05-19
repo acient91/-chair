@@ -1,0 +1,262 @@
+.header {
+  min-height: 145px;
+  display: flex;
+  align-items: center;
+
+  @include for-590-px {
+    margin-bottom: 60px;
+  }
+}
+
+.logo__link {
+  z-index: 20;
+
+  @include for-590-px {
+    margin-right: 50px;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @include for-590-px {
+    flex-direction: column;
+    height: 168px;
+    margin-top: 50px;
+  }
+
+
+  &__btn {
+    display: none;
+
+    @include for-1080-px {
+      position: relative;
+      width: 30px;
+      height: 25px;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      order: 1;
+      z-index: 20;
+
+      span {
+        width: 100%;
+        height: 3px;
+        background-color: $accent;
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $accent;
+      }
+
+      &::after {
+        top: 0;
+      }
+
+      &::before {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    color: $title;
+
+    @include for-1080-px {
+      position: absolute;
+      left: 0;
+      right: 0;
+      transform: translateY(-200px);
+      transition: transform .3s ease;
+    }
+  }
+
+  &__list--active {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: $main;
+    color: $accent;
+    top: 0;
+    transform: translateY(0);
+    transition: transform .3s ease;
+    overflow: hidden;
+    z-index: 15;
+  }
+
+  &__item {
+    font-size: 15px;
+
+    @include for-1080-px {
+      margin-right: 0;
+      font-size: 20px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 35px;
+
+    @include for-1080-px {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    @include for-1080-px {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    transition: border-color .3s ease;
+    border-bottom: 1px solid transparent;
+
+  }
+
+  &__link:hover {
+    border-color: $default;
+  }
+}
+
+.user-nav {
+  display: flex;
+
+  @include for-1080-px {
+    margin-right: 50px;
+    margin-left: auto;
+    z-index: -1;
+  }
+
+  @include for-590-px {
+    margin: 0;
+  }
+
+  &__link-search,
+  &__link-menu {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $main;
+    text-align: center;
+    position: relative;
+    transition: background-color .3s ease;
+
+    path {
+      transition: fill .3s ease;
+    }
+  }
+
+  &__link-search,
+  &__link {
+    margin-right: 20px;
+
+    @include for-590-px {
+      margin-right: 15px;
+    }
+  }
+
+  &__link-search:hover,
+  &__link-menu:hover,
+  &__link-heart:hover,
+  &__link-cart:hover {
+    background-color: #F64C72;
+
+    path {
+      fill: #fff;
+    }
+  }
+
+  &__link-heart,
+  &__link-cart {
+    background-color: #F64C72;
+  }
+
+  &__link {
+    display: flex;
+    width: 180px;
+    height: 50px;
+    border-radius: 50px;
+    position: relative;
+
+    @include for-590-px {
+      width: 170px;
+    }
+  }
+
+  &__link::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 32px;
+    top: 10px;
+    right: 50%;
+    background-color: #fde7d3;
+    z-index: 1;
+  } 
+
+  &__img {
+    margin: 15px auto;
+  }
+
+  &__img-heart,
+  &__img-cart {
+    margin: 16px 36px;
+  }
+
+  &__link-cart,
+  &__link-heart {
+    position: relative;
+    transition: background-color .3s ease;
+  }
+
+  &__link-heart {
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+  }
+
+  &__link-cart {
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+  }
+
+  &__link-heart:hover,
+  &__link-cart:hover {
+    background-color: $main;
+  }
+
+  &__link-cart:hover {
+    border-radius: 0 35px 35px 0;
+  }
+
+  &__link-heart:hover {
+    border-radius: 35px 0 0 35px;
+  }
+
+  &__num {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 8px;
+    right: 30px;
+    font-size: 8px;
+    text-align: center;
+    line-height: 15px;
+  }
+}

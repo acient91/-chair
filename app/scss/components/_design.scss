@@ -1,0 +1,42 @@
+.design {
+  padding-bottom: 110px;
+
+  @include for-590-px {
+    padding-bottom: 50px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    @include for-590-px {
+      font-size: 30px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px 35px;
+    margin-bottom: 120px;
+
+    @include for-1200-px {
+      margin-bottom: 40px;
+    }
+
+    @include for-850-px {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+
+    @include for-590-px {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 30px;
+    }
+  }
+
+  &__item {
+    margin: 0 auto;
+  }
+
+
+}

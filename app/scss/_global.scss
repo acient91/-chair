@@ -1,0 +1,134 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1;
+  color: $default;
+  @extend %Rubik-500;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  &--main {
+    max-width: 1800px;
+    width: 100%;
+  }
+}
+
+.sr-only,
+.sr-form {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+button {
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  outline: transparent;
+  padding: 0;
+}
+
+.title {
+  @extend %DMSans-700;
+  color: $title;
+  font-size: 36px;
+  text-align: center;    
+}
+
+img {
+  object-fit: contain;
+}
+
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    color: $title;
+    font-size: 14px;
+    @extend %Rubik-500;
+  }
+
+  &__item {
+    padding-right: 20px;
+    position: relative;
+
+    &::before {
+      content: "/";
+      position: absolute;
+      right: 6px;
+      top: 0;
+    }
+
+    &:last-child {
+      color: $accent;
+      padding-right: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+  }
+
+  &__item {
+    width: 50px;
+    height: 50px;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  &__link,
+  &__next {
+    display: block;
+    padding: 16px 20px;
+    border: 1px solid $accent;
+    transition: all .3s ease;
+
+    &:hover {
+      background-color: $main;
+      color: #fff;
+    }
+  }
+
+  &__link--active {
+    background-color: $accent;
+    color: #fff;
+  }
+}

@@ -1,0 +1,249 @@
+.slider {
+
+  &__inner {
+    padding-top: 100px;
+    z-index: 2;
+    background-color: $main;
+    position: relative;
+
+    @include for-850-px {
+      padding-top: 100px;
+    }
+
+    @include for-590-px {
+      padding-top: 50px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__item {
+    padding: 0 30px;
+  }
+
+  &__content {
+    @include for-1200-px {
+      padding: 30px 0;
+    }
+  }
+
+  &__title {
+    @extend %Rubik-500;
+    font-size: 72px;
+    color: $title;
+    text-transform: uppercase;
+    max-width: 420px;
+    margin-bottom: 30px;
+
+    @include for-1200-px {
+      font-size: 60px;
+    }
+
+    @include for-1080-px {
+      font-size: 50px;
+    }
+
+    @include for-850-px {
+      font-size: 44px;
+    }
+
+    @include for-590-px {
+      font-size: 30px;
+    }
+  }
+
+  &__text {
+    max-width: 380px;
+    @extend %Rubik-400;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+
+    @include for-590-px {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    padding: 25px 100px 25px 25px; 
+    display: inline-block;
+    background-color: #F64C72;
+    color: #fff;
+    @extend %Rubik-500;
+    font-size: 15px;
+    position: relative;
+    transition: background-color .4s ease-in-out;
+
+    @include for-850-px {
+      padding: 22px 55px 22px 25px;
+    }
+
+    @include for-590-px {
+      padding: 15px 40px 15px 25px;
+    }
+
+    &:hover {
+      background-color: $default;
+    }
+  }
+
+  &__link::after {
+    content: '';
+    position: absolute;
+    background-image: url('../images/arrow-btn-right.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 10px;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include for-590-px {
+      width: 18px;
+      left: 100px;
+    }
+  }
+
+  &__img {
+    max-width: 640px;
+    width: 100%;
+    object-fit: contain;
+
+    @include for-1080-px {
+      max-width: 440px;
+      height: 440px;
+      width: 100%;
+    }
+
+    @include for-850-px {
+      max-width: 300px;
+      height: 300px;
+      width: 100%;
+    }
+
+    @include for-590-px {
+      max-width: 220px;
+      height: 220px;
+      width: 100%;
+    }
+  }
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0 45px;
+
+  @include for-1080-px {
+    padding: 80px 0 45px;
+  }
+
+  @include for-590-px {
+    padding: 35px 0;
+  }
+
+  .slick-active {
+    button {
+      background-color: #fff;
+    }
+  }
+
+  li:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 10px;
+    @extend %Rubik-500;
+    color: #243f4d;
+    background-color: #F64C72;
+  }
+}
+
+.features {
+  padding: 50px 0;
+  background-color: #83677B;
+
+  @include for-590-px {
+    padding-bottom: 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 110px;
+
+    @include for-850-px {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    position: relative;
+    line-height: 2;
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      left: -90px;
+      width: 50px;
+      height: 50px;
+
+      @include for-1200-px {
+        left: -60px;
+      }
+    }
+
+    &--support::before {
+      background-image: url('../images/icons/support.svg');
+    }
+
+    &--delivery::before {
+      background-image: url('../images/icons/delivery.svg');
+    }
+
+    &--payment::before {
+      background-image: url('../images/icons/payment.svg');
+    }
+
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+
+  &__item--payment {
+    @include for-1200-px {
+      margin-right: 23px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    @extend %DMSans-700;
+    color: #414141;
+  }
+
+  &__text {
+    @extend %DMSans-500;
+    font-size: 16px;
+    color: #585858;
+    max-width: 220px;
+
+    @include for-1200-px {
+      max-width: 160px;
+    }
+  }
+}
